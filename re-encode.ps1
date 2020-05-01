@@ -1,5 +1,5 @@
 	#get all raw mpeg2 recordings recursively
-	$shows = get-childitem "d:\plexdata\tvdvr", "d:\plexdata\moviedvr" -rec -include *.ts
+	$shows = get-childitem "d:\TV Series", "d:\Movies" -rec -include *.ts
 
 
 	foreach ($show in $shows) {
@@ -17,8 +17,9 @@
 		if (test-path $outfile) {continue}
 
 		#put together handbrakecli command for this particular recording
-		$cmd = '"c:\program files\handbrake\handbrakecli.exe" -i "' + $sourcefile + '" -o "' + $outfile + '" --preset "Very Fast 720p30" -s "1,2,3,4,5,6" --all-audio'
-	
+		$cmd = '"c:\program files\handbrake\handbrakecli.exe" -i "' + $sourcefile + '" -o "' + $outfile + '"  --two-pass -q 20 --cfr --keep-display-aspect --no-deinterlace --no-comb-detect --decomb="bob" -s "1,2,3,4,5,6" --all-audio'
+
+
 		#run handbrake to make outfile
 		$cmd | cmd
 	
@@ -29,7 +30,7 @@
 		if (test-path $outfile) {
 			$sourcefilesize = (get-item $sourcefile).length
 			$outfilesize = (get-item $outfile).length
-			if (($outfilesize / $sourcefilesize) -gt .065) {
+			if (($outfilesize / $sourcefilesize) -gt .265) {
 				remove-item $sourcefile
 				}
 			}
