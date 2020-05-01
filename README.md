@@ -1,7 +1,12 @@
 # plexreencoder
 Script for re-encoding .ts files to h264
 
-Requies handbrakecli, note that the script names the full path to it, so either put yours there or update the path in the script.
+1. Must be on windows PC with Powershell installed for this to work
+2. Requies [handbrakecli](https://handbrake.fr/downloads2.php), note that the script names the full path to it, so either put yours there or update the path in the script.
+3. Edit script to match your directories and settings (mine are below with the reasoning)
+4. Right click on script file and select run with Powershell
+5. Chill out. Encoding takes some time 
+
 
 **Handbrake Settings are as follows**  
 `--two-pass` - Run 2 passes of encoding for maxium quality  
@@ -15,4 +20,7 @@ Requies handbrakecli, note that the script names the full path to it, so either 
 `--all-audio` - Save whatever audio there is  
 
 
-Update the paths to where you record OTA tv shows and movies.
+### Future Plans
+
+1. Convert this to Python to allow for broader device support
+2. Ring the Plex API to let it now changes have occured. 
