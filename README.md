@@ -10,7 +10,7 @@ Script for re-encoding .ts files to h264
 
 **Handbrake Settings are as follows**  
 `--two-pass` - Run 2 passes of encoding for maxium quality  
- `-q 20` - Constant quality of 20, a fairly good quality, you can dial down to 22 or 24 if you neeed to safe space  
+ `-q 20` - Constant quality of 20, a fairly good quality, you can dial down to 22 or 24 if you neeed to save space  
 `--cfr` - Constant frame rate, a must for OTA broadcast streams          
 `--keep-display-aspect` - Maintain aspect ratio, good because from broadcast the aspects can be all over the place and I don't want to encoding to something incorrect    
 `--no-deinterlace` - Don't need to de-interlace   
